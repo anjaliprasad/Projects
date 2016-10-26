@@ -1,0 +1,19 @@
+<p style="line-height: 18px; font-size: 18px;  font-family: times;">
+<canvas id="canvas" width="640" height="480"></canvas>
+
+<script>
+var R = 5, r = 1, a = 4;
+var x0 = R+r-a, y0 = 0;
+var longitude=(-118.2913436),latitude=34.0212409;
+ctx = document.getElementById("canvas").getContext("2d");
+ctx.moveTo(150+10*x0, 150+10*y0);
+var cos = Math.cos, sin = Math.sin, pi = Math.PI, nRev = 10;
+for(var t = 0.0; t<(pi*nRev); t+=0.01){
+var x = (R+r)*cos((r/R)*t) - a*cos((1+r/R)*t);
+var y = (R+r)*sin((r/R)*t) - a*sin((1+r/R)*t);
+ctx.lineTo(150+10*x, 150+10*y);
+document.write((x+longitude) + "," + (y+latitude) + "\n")
+}
+ctx.stroke();
+</script>
+</p>

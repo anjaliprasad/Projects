@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Style id="z1">
+<IconStyle><Icon><href>http://www.google.com/intl/en_us/mapfiles/ms/micons/blue-dot.png</href></Icon></IconStyle>
+</Style>
+<Placemark><name>Home</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2920057,34.027155</coordinates></Point>
+</Placemark>
+<Placemark><name>Leavey Library</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2849528,34.0218007</coordinates></Point>
+</Placemark>
+<Placemark><name> SGM </name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2913436,34.0212409</coordinates></Point>
+</Placemark>
+<Placemark><name>USC Credit union</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2979097,34.0212399</coordinates></Point>
+</Placemark>
+<Placemark><name>Lyon Center</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2906171,34.0244047</coordinates></Point>
+</Placemark>
+<Placemark><name> KAP </name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2932159,34.0224089</coordinates></Point>
+</Placemark>
+<Placemark><name>BOA Financial Center</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2940934,34.0256495</coordinates></Point>
+</Placemark>
+<Placemark><name>Starbucks</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2839807,34.018791</coordinates></Point>
+</Placemark>
+<Placemark><name>Galen Center</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.3011807,34.0215773</coordinates></Point>
+</Placemark>
+<Placemark>
+ <LineString>
+  <coordinates>
+   -118.2920057,34.027155
+   -118.2940934,34.0256495
+   -118.2920057,34.027155
+   -118.2906171,34.0244047
+   -118.2920057,34.027155
+   -118.2932159,34.0224089
+ </coordinates>
+ </LineString>
+  <Style> 
+  <LineStyle>  
+   <color>#ff0000ff</color>
+  </LineStyle> 
+ </Style>
+</Placemark>
+<Placemark>
+    <name>Convex hull</name>
+    <Polygon>
+      <extrude>1</extrude>
+      <altitudeMode>relativeToGround</altitudeMode>
+      <outerBoundaryIs>
+        <LinearRing>
+          <coordinates>
+            -118.2839807,34.018791,100
+            -118.2849528,34.0218007,100
+            -118.2920057,34.027155,100
+            -118.3011807,34.0215773,100
+            -118.2839807,34.018791,100
+          </coordinates>
+        </LinearRing>
+      </outerBoundaryIs>
+    </Polygon>
+<Style> 
+  <PolyStyle>  
+   <color>#32D278F0</color>
+  </PolyStyle> 
+ </Style>
+  </Placemark>
+</Document></kml>
