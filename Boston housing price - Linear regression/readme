@@ -1,0 +1,32 @@
+Let xi and yi be the feature vector and target value of the i-th data point, respectively. You need to implement linear regression and ridge regression algorithms and apply them on the Boston housing data. Discuss the performance of these algorithms.
+￼2
+CSCI567 Fall 2016 Homework #2 Due 10/03
+Linear Regression Train a linear regressor on the training data, report the mean squared loss (MSE) on both training and test sets. The MSE is defined as
+􏰂 true pred􏰃 1 􏰆n 􏰂 true pred􏰃2 MSEy,y=Nyi−yi ,
+i=1 where ytrue is the ground truth and ypred is the prediction.
+The linear regressor parametrized by (w, b) is defined by the following optimization problem min 1 (f(xi,w,b)−yi)2
+￼￼￼where
+w,b N
+f(xi,w,b)=w⊤xi +b.
+Hint: there is analytically solution to the above optimization problem.
+Ridge Regression Train a Ridge regressor on the training data, report the mean squared loss (MSE) on both training and test sets.
+The linear regressor parametrized by (w, b) is defined by the following optimization problem min 1 (f(xi,w,b)−yi)2 +λ||w||2
+￼where
+w,b N
+f(xi,w,b)=w⊤xi +b.
+Try λ = 0.01, 0.1, 1.0, and report the results.
+Hint: there is also analytically solution to the above optimization problem.
+Ridge Regression with Cross-Validation Finding the best λ plays an important role in
+using the Ridge regression. You should using 10-fold cross-validation (CV) on the training set to evaluate the choice of λ. Select λ from [0.0001, 10]. Report the CV results for different λ and their MSE on test set.
+3.3 Feature Selection
+In this section, we will solve the same problem but using fewer features. We will select 4 features out of the 13 features to predict the price. Discuss the difference between different approaches.
+Selection with Correlation Try the following schemes:
+(a) Select the 4 features with the highest correlation with the target (in absolute value).
+(b) First select one feature with the highest correlation with the target (in absolute value), train a linear regressor. In the remaining features, find another feature with the highest correlation with the residue of previous regressor. Include this feature in the linear regressor and update the residue. Proceed until you find all 4 features. The residue is defined as the difference between the true target value and the predicted value.
+Report the results for both schemes.
+Selection with Brute-force Search Try all combination of 4 features, report the best com-
+bination of features and the results.
+3
+CSCI567 Fall 2016 Homework #2 Due 10/03
+3.4 Polynomial Feature Expansion
+Now, you should expand the 13 features through polynomial expansion. That is, create new features by multiplying the old features together, i.e., xi ∗ xj for i, j = 0, 1, . . . , 12. Create the new expanded data with 104 = 13 + (1 + 13) ∗ 13/2 features, properly standardize the new features, apply the linear regression model and report the results.
