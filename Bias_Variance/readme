@@ -1,0 +1,13 @@
+Bias Variance Trade-off 
+Let the function f (x) = 2x2 + ε, where ε is Gaussian noise drawn from N (0, 0.1). We are also given the following functions:
+• g1(x)=1
+• g2(x)=w0
+• g3(x) = w0 + w1x
+• g4(x)=w0 +w1x+w2x2
+• g5(x)=w0 +w1x+w2x2 +w3x3
+• g6(x)=w0 +w1x+w2x2 +w3x3 +w4x4
+
+(a) Randomly generate 100 datasets. Each dataset contains 10 samples (xi , yi ), where xi is uniformly sampled from [−1,1] and yi = f(xi). For a given g function, estimate its parameters using linear regression (with no regularization) and compute the sum-square-error on every dataset. Then plot the histogram of the mean-squared-error. Repeat this for each g function. Please provide the 6 histogram plots in the report. For each g function, estimate its bias2 and variance, and report the results. 
+(b) In (a), change the sample size in each dataset to 100, and repeat the procedures. Plot the resulting histograms in the report. For each g function, estimate its bias2 and variance, and report the results. 
+(c) Given your results in (a) and (b), discuss how the model complexity and sample size affect the bias2 and variance. 
+(d) Consider function hλ(x) = w0 + w1x + w2x2 where λ ≥ 0 is the L2 regularization parameter used during linear regression i.e. your regression loss function will have an additional λ(w02 + w12 +w2) regularization term. Following (b) (i.e. 100 samples per dataset), estimate the bias2 and variance of each hλ(x) when λ is set to 0.001,0.003,0.01,0.03,0.1,0.3,1.0 respectively. Analyze your obtained values and discuss how λ affects the bias2 and variance. 
