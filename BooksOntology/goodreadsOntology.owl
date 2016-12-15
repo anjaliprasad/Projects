@@ -1,0 +1,641 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY goodreads "http://www.semanticweb.org/pjbha/goodreads#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/pjbha/goodreads#"
+     xml:base="http://www.semanticweb.org/pjbha/goodreads"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:goodreads="http://www.semanticweb.org/pjbha/goodreads#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/pjbha/goodreads"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#boughtFrom -->
+
+    <owl:ObjectProperty rdf:about="&goodreads;boughtFrom">
+        <rdfs:domain rdf:resource="&goodreads;Book"/>
+        <rdfs:range rdf:resource="&goodreads;Vender"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#contains -->
+
+    <owl:ObjectProperty rdf:about="&goodreads;contains">
+        <rdfs:range rdf:resource="&goodreads;Character"/>
+        <rdfs:domain rdf:resource="&goodreads;Story"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#given -->
+
+    <owl:ObjectProperty rdf:about="&goodreads;given">
+        <rdfs:domain rdf:resource="&goodreads;Book"/>
+        <rdfs:range rdf:resource="&goodreads;Review"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#has -->
+
+    <owl:ObjectProperty rdf:about="&goodreads;has">
+        <rdfs:domain rdf:resource="&goodreads;Book"/>
+        <rdfs:range rdf:resource="&goodreads;Edition"/>
+        <rdfs:range rdf:resource="&goodreads;Genres"/>
+        <rdfs:range rdf:resource="&goodreads;Review"/>
+        <rdfs:range rdf:resource="&goodreads;Story"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#relatedTo -->
+
+    <owl:ObjectProperty rdf:about="&goodreads;relatedTo">
+        <rdfs:domain rdf:resource="&goodreads;Book"/>
+        <rdfs:range rdf:resource="&goodreads;Book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#similarTo -->
+
+    <owl:ObjectProperty rdf:about="&goodreads;similarTo">
+        <rdfs:range rdf:resource="&goodreads;Book"/>
+        <rdfs:domain rdf:resource="&goodreads;Book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#writes -->
+
+    <owl:ObjectProperty rdf:about="&goodreads;writes">
+        <rdfs:domain rdf:resource="&goodreads;Author"/>
+        <rdfs:range rdf:resource="&goodreads;Book"/>
+        <owl:inverseOf rdf:resource="&goodreads;writtenBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#writtenBy -->
+
+    <owl:ObjectProperty rdf:about="&goodreads;writtenBy">
+        <rdfs:range rdf:resource="&goodreads;Author"/>
+        <rdfs:domain rdf:resource="&goodreads;Book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#BookInformation -->
+
+    <owl:DatatypeProperty rdf:about="&goodreads;BookInformation">
+        <rdfs:domain rdf:resource="&goodreads;Book"/>
+        <owl:equivalentProperty rdf:resource="&goodreads;URL"/>
+        <owl:equivalentProperty rdf:resource="&goodreads;about"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#ISBN -->
+
+    <owl:DatatypeProperty rdf:about="&goodreads;ISBN">
+        <rdfs:domain rdf:resource="&goodreads;Edition"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#LastName -->
+
+    <owl:DatatypeProperty rdf:about="&goodreads;LastName">
+        <rdfs:domain rdf:resource="&goodreads;Author"/>
+        <rdfs:subPropertyOf rdf:resource="&goodreads;PersonalInformation"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#PersonalInformation -->
+
+    <owl:DatatypeProperty rdf:about="&goodreads;PersonalInformation">
+        <rdfs:domain rdf:resource="&goodreads;Author"/>
+        <owl:equivalentProperty rdf:resource="&goodreads;URL"/>
+        <owl:equivalentProperty rdf:resource="&goodreads;about"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#URL -->
+
+    <owl:DatatypeProperty rdf:about="&goodreads;URL">
+        <rdfs:domain rdf:resource="&goodreads;Author"/>
+        <rdfs:domain rdf:resource="&goodreads;Book"/>
+        <rdfs:domain rdf:resource="&goodreads;Edition"/>
+        <rdfs:domain rdf:resource="&goodreads;Genres"/>
+        <rdfs:domain rdf:resource="&goodreads;Review"/>
+        <rdfs:domain rdf:resource="&goodreads;Story"/>
+        <rdfs:domain rdf:resource="&goodreads;Vender"/>
+        <owl:equivalentProperty rdf:resource="&goodreads;about"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#about -->
+
+    <owl:DatatypeProperty rdf:about="&goodreads;about">
+        <rdfs:domain rdf:resource="&goodreads;Author"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#awards -->
+
+    <owl:DatatypeProperty rdf:about="&goodreads;awards">
+        <rdfs:domain rdf:resource="&goodreads;Book"/>
+        <rdfs:subPropertyOf rdf:resource="&goodreads;BookInformation"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#characters -->
+
+    <owl:DatatypeProperty rdf:about="&goodreads;characters">
+        <rdfs:domain rdf:resource="&goodreads;Story"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#date -->
+
+    <owl:DatatypeProperty rdf:about="&goodreads;date">
+        <rdfs:domain rdf:resource="&goodreads;Review"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#description -->
+
+    <owl:DatatypeProperty rdf:about="&goodreads;description">
+        <rdfs:domain rdf:resource="&goodreads;Story"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#firstName -->
+
+    <owl:DatatypeProperty rdf:about="&goodreads;firstName">
+        <rdfs:domain rdf:resource="&goodreads;Author"/>
+        <rdfs:subPropertyOf rdf:resource="&goodreads;PersonalInformation"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#genreCount -->
+
+    <owl:DatatypeProperty rdf:about="&goodreads;genreCount">
+        <rdfs:domain rdf:resource="&goodreads;Genres"/>
+        <rdfs:range rdf:resource="&xsd;long"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#image -->
+
+    <owl:DatatypeProperty rdf:about="&goodreads;image">
+        <rdfs:domain rdf:resource="&goodreads;Author"/>
+        <rdfs:domain rdf:resource="&goodreads;Book"/>
+        <rdfs:domain rdf:resource="&goodreads;Edition"/>
+        <rdfs:domain rdf:resource="&goodreads;Vender"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#introduction -->
+
+    <owl:DatatypeProperty rdf:about="&goodreads;introduction">
+        <rdfs:domain rdf:resource="&goodreads;Story"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#isGood -->
+
+    <owl:DatatypeProperty rdf:about="&goodreads;isGood">
+        <rdfs:domain rdf:resource="&goodreads;Review"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#language -->
+
+    <owl:DatatypeProperty rdf:about="&goodreads;language">
+        <rdfs:domain rdf:resource="&goodreads;Edition"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#likedBy -->
+
+    <owl:DatatypeProperty rdf:about="&goodreads;likedBy">
+        <rdfs:domain rdf:resource="&goodreads;Review"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#likesCount -->
+
+    <owl:DatatypeProperty rdf:about="&goodreads;likesCount">
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#name -->
+
+    <owl:DatatypeProperty rdf:about="&goodreads;name">
+        <rdfs:domain rdf:resource="&goodreads;Author"/>
+        <rdfs:domain rdf:resource="&goodreads;Book"/>
+        <rdfs:domain rdf:resource="&goodreads;Genres"/>
+        <rdfs:domain rdf:resource="&goodreads;Vender"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#noOfPages -->
+
+    <owl:DatatypeProperty rdf:about="&goodreads;noOfPages">
+        <rdfs:domain rdf:resource="&goodreads;Book"/>
+        <rdfs:subPropertyOf rdf:resource="&goodreads;BookInformation"/>
+        <rdfs:range rdf:resource="&xsd;long"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#noOfRatings -->
+
+    <owl:DatatypeProperty rdf:about="&goodreads;noOfRatings">
+        <rdfs:domain rdf:resource="&goodreads;Book"/>
+        <rdfs:subPropertyOf rdf:resource="&goodreads;BookInformation"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#noOfReviews -->
+
+    <owl:DatatypeProperty rdf:about="&goodreads;noOfReviews">
+        <rdfs:domain rdf:resource="&goodreads;Book"/>
+        <rdfs:subPropertyOf rdf:resource="&goodreads;BookInformation"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#price -->
+
+    <owl:DatatypeProperty rdf:about="&goodreads;price">
+        <rdfs:domain rdf:resource="&goodreads;Vender"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#rating -->
+
+    <owl:DatatypeProperty rdf:about="&goodreads;rating">
+        <rdfs:domain rdf:resource="&goodreads;Book"/>
+        <rdfs:subPropertyOf rdf:resource="&goodreads;BookInformation"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#reviewer -->
+
+    <owl:DatatypeProperty rdf:about="&goodreads;reviewer">
+        <rdfs:domain rdf:resource="&goodreads;Review"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#title -->
+
+    <owl:DatatypeProperty rdf:about="&goodreads;title">
+        <rdfs:domain rdf:resource="&goodreads;Book"/>
+        <rdfs:subPropertyOf rdf:resource="&goodreads;BookInformation"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#topGenre -->
+
+    <owl:DatatypeProperty rdf:about="&goodreads;topGenre">
+        <rdfs:domain rdf:resource="&goodreads;Genres"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#Author -->
+
+    <owl:Class rdf:about="&goodreads;Author"/>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#Book -->
+
+    <owl:Class rdf:about="&goodreads;Book"/>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#Character -->
+
+    <owl:Class rdf:about="&goodreads;Character"/>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#Edition -->
+
+    <owl:Class rdf:about="&goodreads;Edition"/>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#Genres -->
+
+    <owl:Class rdf:about="&goodreads;Genres"/>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#Review -->
+
+    <owl:Class rdf:about="&goodreads;Review"/>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#Story -->
+
+    <owl:Class rdf:about="&goodreads;Story"/>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#Vender -->
+
+    <owl:Class rdf:about="&goodreads;Vender"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#DracoMalfoy -->
+
+    <owl:NamedIndividual rdf:about="&goodreads;DracoMalfoy">
+        <rdf:type rdf:resource="&goodreads;Character"/>
+        <name rdf:datatype="&xsd;string">Draco Malfoy</name>
+        <URL rdf:datatype="&xsd;string">http://www.goodreads.com/characters/2562-draco-malfoy</URL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#Genre -->
+
+    <owl:NamedIndividual rdf:about="&goodreads;Genre">
+        <rdf:type rdf:resource="&goodreads;Genres"/>
+        <topGenre rdf:datatype="&xsd;string">Fantasy</topGenre>
+        <URL rdf:datatype="&xsd;string">https://www.goodreads.com/work/shelves/4640799</URL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#HermioneGranger -->
+
+    <owl:NamedIndividual rdf:about="&goodreads;HermioneGranger">
+        <rdf:type rdf:resource="&goodreads;Character"/>
+        <name rdf:datatype="&xsd;string">Hermione Granger</name>
+        <URL rdf:datatype="&xsd;string">http://www.goodreads.com/characters/956440-hermione-granger</URL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#RonWeasley -->
+
+    <owl:NamedIndividual rdf:about="&goodreads;RonWeasley">
+        <rdf:type rdf:resource="&goodreads;Character"/>
+        <name rdf:datatype="&xsd;string">Ron Weasley</name>
+        <URL rdf:datatype="&xsd;string">http://www.goodreads.com/characters/28270-ron-weasley</URL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#amazon -->
+
+    <owl:NamedIndividual rdf:about="&goodreads;amazon">
+        <rdf:type rdf:resource="&goodreads;Vender"/>
+        <name rdf:datatype="&xsd;string">Amazon</name>
+        <URL rdf:datatype="&xsd;string">https://www.amazon.com/gp/product/0439554934/ref=x_gr_w_glide_bb_sout?ie=UTF8&amp;tag=x_gr_w_glide_bb_sout-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0439554934&amp;SubscriptionId=1MGPYB6YW3HWK55XCGG2</URL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#edition1 -->
+
+    <owl:NamedIndividual rdf:about="&goodreads;edition1">
+        <rdf:type rdf:resource="&goodreads;Edition"/>
+        <ISBN rdf:datatype="&xsd;string">0439554934 (ISBN13: 9780439554930)</ISBN>
+        <language rdf:datatype="&xsd;string">English</language>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#harrypotter -->
+
+    <owl:NamedIndividual rdf:about="&goodreads;harrypotter">
+        <rdf:type rdf:resource="&goodreads;Character"/>
+        <name rdf:datatype="&xsd;string">Harry Potter</name>
+        <URL rdf:datatype="&xsd;string">http://www.goodreads.com/characters/956439-harry-potter</URL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#harrypotter1 -->
+
+    <owl:NamedIndividual rdf:about="&goodreads;harrypotter1">
+        <rdf:type rdf:resource="&goodreads;Book"/>
+        <noOfRatings rdf:datatype="&xsd;string"> 4,255,451</noOfRatings>
+        <noOfReviews rdf:datatype="&xsd;string"> 67,096 </noOfReviews>
+        <noOfPages rdf:datatype="&xsd;long">320</noOfPages>
+        <rating rdf:datatype="&xsd;string">4.43 </rating>
+        <title rdf:datatype="&xsd;string">Harry Potter and the Sorcerer&apos;s Stone</title>
+        <awards rdf:datatype="&xsd;string">Mythopoeic Fantasy Award for Children&apos;s Literature (2008), British Book Award for Children&apos;s Book of the Year (1998), Smarties Prize (1997), Prijs van de Nederlandse Kinderjury for 6-9 jaar en 10-12 jaar (2002), American Booksellers Book Of The Year Award for Children (1999)</awards>
+        <image rdf:datatype="&xsd;string">https://www.goodreads.com/photo/work/4640799-harry-potter-and-the-philosopher-s-stone
+
+https://www.goodreads.com/book/show/3.Harry_Potter_and_the_Sorcerer_s_Stone#other_reviews</image>
+        <image rdf:datatype="&xsd;anyURI">https://www.google.com/imgres?imgurl=http://www.gstatic.com/tv/thumb/movieposters/28630/p28630_p_v8_at.jpg&amp;imgrefurl=http://google.com/search%3Ftbm%3Disch%26q%3DHarry%2520Potter%2520and%2520the%2520Sorcerer%27s%2520Stone:%2520The%2520IMAX%25202D%2520Experience&amp;h=1440&amp;w=960&amp;tbnid=ruZksWSuXP_zBM:&amp;vet=1&amp;tbnh=186&amp;tbnw=124&amp;docid=i7y805POrx0KvM&amp;itg=1&amp;usg=__a_sAFfwoaRt18-DEN-p-wi_3y_4=&amp;sa=X&amp;ved=0ahUKEwjYqr2Gh73QAhXqh1QKHXsuCk8Q_B0IdzAK&amp;ei=uJY0WNjuGOqP0gL73Kj4BA</image>
+        <image></image>
+        <has rdf:resource="&goodreads;Genre"/>
+        <boughtFrom rdf:resource="&goodreads;amazon"/>
+        <has rdf:resource="&goodreads;edition1"/>
+        <has rdf:resource="&goodreads;harrypotter1story"/>
+        <similarTo rdf:resource="&goodreads;harrypotter2"/>
+        <writtenBy rdf:resource="&goodreads;jkrowling"/>
+        <given rdf:resource="&goodreads;review1"/>
+        <given rdf:resource="&goodreads;review2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#harrypotter1story -->
+
+    <owl:NamedIndividual rdf:about="&goodreads;harrypotter1story">
+        <rdf:type rdf:resource="&goodreads;Story"/>
+        <introduction rdf:datatype="&xsd;string">Harry Potter&apos;s life is miserable. His parents are dead and he&apos;s stuck with his heartless relatives, who force him to live in a tiny closet under the stairs. But his fortune changes when he receives a letter that tells him the truth about himself: he&apos;s a wizard. A mysterious visitor rescues him from his relatives and takes him to his new home, Hogwarts School of Witchcraft and Wizardry.
+
+After a lifetime of bottling up his magical powers, Harry finally feels like a normal kid. But even within the Wizarding community, he is special. He is the boy who lived: the only person to have ever survived a killing curse inflicted by the evil Lord Voldemort, who launched a brutal takeover of the Wizarding world, only to vanish after failing to kill Harry.
+
+Though Harry&apos;s first year at Hogwarts is the best of his life, not everything is perfect. There is a dangerous secret object hidden within the castle walls, and Harry believes it&apos;s his responsibility to prevent it from falling into evil hands. But doing so will bring him into contact with forces more terrifying than he ever could have imagined.
+
+Full of sympathetic characters, wildly imaginative situations, and countless exciting details, the first installment in the series assembles an unforgettable magical world and sets the stage for many high-stakes adventures to come.</introduction>
+        <contains rdf:resource="&goodreads;DracoMalfoy"/>
+        <contains rdf:resource="&goodreads;HermioneGranger"/>
+        <contains rdf:resource="&goodreads;RonWeasley"/>
+        <contains rdf:resource="&goodreads;harrypotter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#harrypotter2 -->
+
+    <owl:NamedIndividual rdf:about="&goodreads;harrypotter2">
+        <rdf:type rdf:resource="&goodreads;Book"/>
+        <title rdf:datatype="&xsd;string">Harry Potter and the Chamber of Secrets</title>
+        <writtenBy rdf:resource="&goodreads;jkrowling"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#jkrowling -->
+
+    <owl:NamedIndividual rdf:about="&goodreads;jkrowling">
+        <rdf:type rdf:resource="&goodreads;Author"/>
+        <firstName rdf:datatype="&xsd;string">Joanne </firstName>
+        <LastName rdf:datatype="&xsd;string">Rowling</LastName>
+        <about rdf:datatype="&xsd;string">https://en.wikipedia.org/wiki/J._K._Rowling
+
+
+http://www.jkrowling.com/en_US/</about>
+        <image rdf:datatype="&xsd;string">https://www.google.com/imgres?imgurl=http://a4.files.biography.com/image/upload/c_fill,cs_srgb,dpr_1.0,g_face,h_300,q_80,w_300/MTE1ODA0OTcxMzcxNTYyNTA5.jpg&amp;imgrefurl=http://www.biography.com/people/jk-rowling-40998&amp;h=300&amp;w=300&amp;tbnid=OoW_yDb-6ItaOM:&amp;vet=1&amp;tbnh=186&amp;tbnw=186&amp;docid=Ex-KJMCqsQzpnM&amp;itg=1&amp;usg=__SuyALNaa5ZgHuyyVNohIiGL1QzU=&amp;sa=X&amp;ved=0ahUKEwiQjOj73r_QAhXLzlQKHS8NBe8Q_B0IhQEwEw&amp;ei=V_81WNCEM8ud0wKvmpT4Dg</image>
+        <writes rdf:resource="&goodreads;harrypotter1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#review1 -->
+
+    <owl:NamedIndividual rdf:about="&goodreads;review1">
+        <rdf:type rdf:resource="&goodreads;Review"/>
+        <date rdf:datatype="&xsd;string">11/23/2016</date>
+        <likesCount rdf:datatype="&xsd;long">24</likesCount>
+        <reviewer rdf:datatype="&xsd;string">Olivia</reviewer>
+        <URL rdf:datatype="&xsd;string">https://www.goodreads.com/questions/200220-i-have-watched-all-the-harry-potter-films</URL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#review2 -->
+
+    <owl:NamedIndividual rdf:about="&goodreads;review2">
+        <rdf:type rdf:resource="&goodreads;Review"/>
+        <date rdf:datatype="&xsd;string">11/23/2016</date>
+        <likesCount rdf:datatype="&xsd;long">3</likesCount>
+        <reviewer rdf:datatype="&xsd;string">Shruthi</reviewer>
+        <URL rdf:datatype="&xsd;string">https://www.goodreads.com/questions/200220-i-have-watched-all-the-harry-potter-films</URL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pjbha/goodreads#story1 -->
+
+    <owl:NamedIndividual rdf:about="&goodreads;story1">
+        <rdf:type rdf:resource="&goodreads;Story"/>
+        <contains rdf:resource="&goodreads;harrypotter"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

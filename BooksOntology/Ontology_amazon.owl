@@ -1,0 +1,211 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY amazon "http://www.semanticweb.org/anjaliprasad/amazon#" >
+    <!ENTITY untitled-ontology-2 "http://www.semanticweb.org/anjaliprasad/ontologies/2016/10/untitled-ontology-2#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/anjaliprasad/ontologies/2016/10/untitled-ontology-2#"
+     xml:base="http://www.semanticweb.org/anjaliprasad/ontologies/2016/10/untitled-ontology-2"
+     xmlns:untitled-ontology-2="http://www.semanticweb.org/anjaliprasad/ontologies/2016/10/untitled-ontology-2#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:amazon="http://www.semanticweb.org/anjaliprasad/amazon#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/anjaliprasad/amazon"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/anjaliprasad/amazon#Amazon_best_seller_rank -->
+
+    <owl:DatatypeProperty rdf:about="&amazon;Amazon_best_seller_rank">
+        <rdfs:domain rdf:resource="&amazon;Book"/>
+        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anjaliprasad/amazon#Genre -->
+
+    <owl:DatatypeProperty rdf:about="&amazon;Genre">
+        <rdfs:domain rdf:resource="&amazon;Book"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anjaliprasad/amazon#Hardcover -->
+
+    <owl:DatatypeProperty rdf:about="&amazon;Hardcover">
+        <rdfs:domain rdf:resource="&amazon;Book"/>
+        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anjaliprasad/amazon#Language -->
+
+    <owl:DatatypeProperty rdf:about="&amazon;Language">
+        <rdfs:domain rdf:resource="&amazon;Book"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anjaliprasad/amazon#Price -->
+
+    <owl:DatatypeProperty rdf:about="&amazon;Price">
+        <rdfs:domain rdf:resource="&amazon;Book"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anjaliprasad/amazon#Publisher -->
+
+    <owl:DatatypeProperty rdf:about="&amazon;Publisher">
+        <rdfs:domain rdf:resource="&amazon;Book"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anjaliprasad/amazon#Rating -->
+
+    <owl:DatatypeProperty rdf:about="&amazon;Rating">
+        <rdfs:domain rdf:resource="&amazon;Book"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anjaliprasad/amazon#Shipping_weight -->
+
+    <owl:DatatypeProperty rdf:about="&amazon;Shipping_weight">
+        <rdfs:domain rdf:resource="&amazon;Book"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anjaliprasad/amazon#Synopsis -->
+
+    <owl:DatatypeProperty rdf:about="&amazon;Synopsis">
+        <rdfs:domain rdf:resource="&amazon;Book"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anjaliprasad/amazon#Title -->
+
+    <owl:DatatypeProperty rdf:about="&amazon;Title">
+        <rdfs:domain rdf:resource="&amazon;Book"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/anjaliprasad/amazon#Book -->
+
+    <owl:Class rdf:about="&amazon;Book">
+        <rdfs:subClassOf rdf:resource="&amazon;Product"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anjaliprasad/amazon#Product -->
+
+    <owl:Class rdf:about="&amazon;Product"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/anjaliprasad/amazon#Fantastic_Beasts_and_Where_to_Find_Them -->
+
+    <owl:NamedIndividual rdf:about="&amazon;Fantastic_Beasts_and_Where_to_Find_Them">
+        <rdf:type rdf:resource="&amazon;Book"/>
+        <amazon:Hardcover rdf:datatype="&xsd;positiveInteger">1564</amazon:Hardcover>
+        <amazon:Shipping_weight rdf:datatype="&xsd;float">3.0</amazon:Shipping_weight>
+        <amazon:Rating rdf:datatype="&xsd;float">4.5</amazon:Rating>
+        <amazon:Amazon_best_seller_rank rdf:datatype="&xsd;positiveInteger">52</amazon:Amazon_best_seller_rank>
+        <amazon:Price rdf:datatype="&xsd;float">99.99</amazon:Price>
+        <amazon:Synopsis rdf:datatype="&xsd;string">A copy of FANTASTIC BEASTS &amp; WHERE TO FIND THEM resides in almost every wizarding household in the country. Now Muggles too have the chance to discover where the Quintaped lives, what the Puffskein eats, and why it is best not to leave milk out for a Knarl.</amazon:Synopsis>
+        <amazon:Publisher rdf:datatype="&xsd;string">Bloomsbury</amazon:Publisher>
+        <amazon:Language rdf:datatype="&xsd;string">English</amazon:Language>
+        <amazon:Title rdf:datatype="&xsd;string">Fantastic Beasts and Where to Find Them</amazon:Title>
+        <amazon:Genre rdf:datatype="&xsd;string">Fantasy</amazon:Genre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anjaliprasad/amazon#Harry_Potter_and_the_Sorcerer&apos;s_Stone -->
+
+    <owl:NamedIndividual rdf:about="&amazon;Harry_Potter_and_the_Sorcerer&apos;s_Stone">
+        <rdf:type rdf:resource="&amazon;Book"/>
+        <amazon:Amazon_best_seller_rank rdf:datatype="&xsd;nonNegativeInteger">112</amazon:Amazon_best_seller_rank>
+        <amazon:Price rdf:datatype="&xsd;float">12.7</amazon:Price>
+        <amazon:Shipping_weight rdf:datatype="&xsd;float">2.0</amazon:Shipping_weight>
+        <amazon:Rating rdf:datatype="&xsd;float">4.5</amazon:Rating>
+        <amazon:Hardcover rdf:datatype="&xsd;positiveInteger">900</amazon:Hardcover>
+        <amazon:Language rdf:datatype="&xsd;string">English</amazon:Language>
+        <amazon:Genre rdf:datatype="&xsd;string">Fiction</amazon:Genre>
+        <amazon:Title rdf:datatype="&xsd;string">Harry Potter and the Sorcerer&apos;s Stone</amazon:Title>
+        <amazon:Synopsis rdf:datatype="&xsd;string">Harry Potter has no idea how famous he is. That&apos;s because he&apos;s being raised by his miserable aunt and uncle who are terrified Harry will learn that he&apos;s really a wizard, just as his parents were. But everything changes when Harry is summoned to attend an infamous school for wizards, and he begins to discover some clues about his illustrious birthright. From the surprising way he is greeted by a lovable giant, to the unique curriculum and colorful faculty at his unusual school, Harry finds himself drawn deep inside a mystical world he never knew existed and closer to his own noble destiny</amazon:Synopsis>
+        <amazon:Publisher rdf:datatype="&xsd;string">Scholastic</amazon:Publisher>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anjaliprasad/amazon#harrypotterbook2 -->
+
+    <owl:NamedIndividual rdf:about="&amazon;harrypotterbook2">
+        <rdf:type rdf:resource="&amazon;Book"/>
+        <amazon:Price rdf:datatype="&xsd;float">14.0</amazon:Price>
+        <amazon:Title rdf:datatype="&xsd;string">Harry Potter and the Chamber of Secrets</amazon:Title>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

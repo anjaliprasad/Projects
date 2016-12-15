@@ -1,0 +1,1078 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY meta-ontology "http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#"
+     xml:base="http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:meta-ontology="http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#adaptationOf -->
+
+    <owl:ObjectProperty rdf:about="&meta-ontology;adaptationOf">
+        <rdfs:range rdf:resource="&meta-ontology;Book"/>
+        <rdfs:domain rdf:resource="&meta-ontology;Comic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#adaptedTo -->
+
+    <owl:ObjectProperty rdf:about="&meta-ontology;adaptedTo">
+        <rdfs:domain rdf:resource="&meta-ontology;Book"/>
+        <rdfs:range rdf:resource="&meta-ontology;Comic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#belongsTo -->
+
+    <owl:ObjectProperty rdf:about="&meta-ontology;belongsTo">
+        <rdfs:domain rdf:resource="&meta-ontology;Comic"/>
+        <rdfs:range rdf:resource="&meta-ontology;ComicAge"/>
+        <rdfs:range rdf:resource="&meta-ontology;Series"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#contains -->
+
+    <owl:ObjectProperty rdf:about="&meta-ontology;contains">
+        <rdfs:range rdf:resource="&meta-ontology;Author"/>
+        <rdfs:domain rdf:resource="&meta-ontology;Book"/>
+        <rdfs:range rdf:resource="&meta-ontology;Character"/>
+        <rdfs:domain rdf:resource="&meta-ontology;Comic"/>
+        <rdfs:range rdf:resource="&meta-ontology;Story"/>
+        <rdfs:domain rdf:resource="&meta-ontology;Story"/>
+        <rdfs:domain rdf:resource="&meta-ontology;Team"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#createdBy -->
+
+    <owl:ObjectProperty rdf:about="&meta-ontology;createdBy">
+        <rdfs:domain rdf:resource="&meta-ontology;Comic"/>
+        <rdfs:range rdf:resource="&meta-ontology;Team"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#given -->
+
+    <owl:ObjectProperty rdf:about="&meta-ontology;given">
+        <rdfs:domain rdf:resource="&meta-ontology;Book"/>
+        <rdfs:range rdf:resource="&meta-ontology;Review"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#has -->
+
+    <owl:ObjectProperty rdf:about="&meta-ontology;has">
+        <rdfs:domain rdf:resource="&meta-ontology;Book"/>
+        <rdfs:range rdf:resource="&meta-ontology;Edition"/>
+        <rdfs:range rdf:resource="&meta-ontology;Genre"/>
+        <rdfs:range rdf:resource="&meta-ontology;Story"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#illustratedBy -->
+
+    <owl:ObjectProperty rdf:about="&meta-ontology;illustratedBy">
+        <rdfs:domain rdf:resource="&meta-ontology;Comic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#inkedBy -->
+
+    <owl:ObjectProperty rdf:about="&meta-ontology;inkedBy">
+        <rdfs:domain rdf:resource="&meta-ontology;Comic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#is -->
+
+    <owl:ObjectProperty rdf:about="&meta-ontology;is">
+        <rdfs:domain rdf:resource="&meta-ontology;Book"/>
+        <rdfs:range rdf:resource="&meta-ontology;Product"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#letteredBy -->
+
+    <owl:ObjectProperty rdf:about="&meta-ontology;letteredBy">
+        <rdfs:domain rdf:resource="&meta-ontology;Comic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#publishedBy -->
+
+    <owl:ObjectProperty rdf:about="&meta-ontology;publishedBy">
+        <rdfs:domain rdf:resource="&meta-ontology;Comic"/>
+        <rdfs:range rdf:resource="&meta-ontology;Publisher"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#universeOf -->
+
+    <owl:ObjectProperty rdf:about="&meta-ontology;universeOf">
+        <rdfs:range rdf:resource="&meta-ontology;Comic"/>
+        <rdfs:domain rdf:resource="&meta-ontology;Universe"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#writtenBy -->
+
+    <owl:ObjectProperty rdf:about="&meta-ontology;writtenBy">
+        <rdfs:range rdf:resource="&meta-ontology;Author"/>
+        <rdfs:domain rdf:resource="&meta-ontology;Book"/>
+        <rdfs:domain rdf:resource="&meta-ontology;Comic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#ISBN_number -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;ISBN_number">
+        <rdfs:domain rdf:resource="&meta-ontology;Edition"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#author_about -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;author_about">
+        <rdfs:domain rdf:resource="&meta-ontology;Author"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#author_name -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;author_name">
+        <rdfs:domain rdf:resource="&meta-ontology;Author"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#awards -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;awards">
+        <rdfs:domain rdf:resource="&meta-ontology;Book"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#book_name -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;book_name">
+        <rdfs:domain rdf:resource="&meta-ontology;Book"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#character_name -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;character_name">
+        <rdfs:domain rdf:resource="&meta-ontology;Character"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#comic_name -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;comic_name">
+        <rdfs:domain rdf:resource="&meta-ontology;Comic"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#comics_publisher_name -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;comics_publisher_name">
+        <rdfs:domain rdf:resource="&meta-ontology;Publisher"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#content -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;content">
+        <rdfs:domain rdf:resource="&meta-ontology;Review"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#date -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;date">
+        <rdfs:domain rdf:resource="&meta-ontology;Review"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#edition_language -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;edition_language">
+        <rdfs:domain rdf:resource="&meta-ontology;Edition"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#genre -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;genre">
+        <rdfs:domain rdf:resource="&meta-ontology;Product"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#hardcover -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;hardcover">
+        <rdfs:domain rdf:resource="&meta-ontology;Product"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#hasGenre -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;hasGenre"/>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#illustrator_name -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;illustrator_name">
+        <rdfs:domain rdf:resource="&meta-ontology;Team"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#image -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;image">
+        <rdfs:domain rdf:resource="&meta-ontology;Book"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#inker_name -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;inker_name">
+        <rdfs:domain rdf:resource="&meta-ontology;Team"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#introduction -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;introduction">
+        <rdfs:domain rdf:resource="&meta-ontology;Story"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#letterer_name -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;letterer_name">
+        <rdfs:domain rdf:resource="&meta-ontology;Team"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#pages -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;pages">
+        <rdfs:domain rdf:resource="&meta-ontology;Book"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#plot -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;plot">
+        <rdfs:domain rdf:resource="&meta-ontology;Story"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#price -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;price">
+        <rdfs:domain rdf:resource="&meta-ontology;Product"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#rating -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;rating">
+        <rdfs:domain rdf:resource="&meta-ontology;Book"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#ratingCount -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;ratingCount">
+        <rdfs:domain rdf:resource="&meta-ontology;Book"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#reviewCount -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;reviewCount">
+        <rdfs:domain rdf:resource="&meta-ontology;Book"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#reviewer -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;reviewer">
+        <rdfs:domain rdf:resource="&meta-ontology;Review"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#series_name -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;series_name"/>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#shipping_weight -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;shipping_weight">
+        <rdfs:domain rdf:resource="&meta-ontology;Product"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#title -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;title">
+        <rdfs:domain rdf:resource="&meta-ontology;Book"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#topgenre -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;topgenre">
+        <rdfs:domain rdf:resource="&meta-ontology;Genre"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#universe_name -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;universe_name"/>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#url -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;url">
+        <rdfs:domain rdf:resource="&meta-ontology;Genre"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#vendor -->
+
+    <owl:DatatypeProperty rdf:about="&meta-ontology;vendor">
+        <rdfs:domain rdf:resource="&meta-ontology;Product"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Author -->
+
+    <owl:Class rdf:about="&meta-ontology;Author">
+        <rdfs:subClassOf rdf:resource="&meta-ontology;Team"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Book -->
+
+    <owl:Class rdf:about="&meta-ontology;Book">
+        <rdfs:subClassOf rdf:resource="&meta-ontology;Character"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Character -->
+
+    <owl:Class rdf:about="&meta-ontology;Character"/>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Comic -->
+
+    <owl:Class rdf:about="&meta-ontology;Comic"/>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#ComicAge -->
+
+    <owl:Class rdf:about="&meta-ontology;ComicAge"/>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Edition -->
+
+    <owl:Class rdf:about="&meta-ontology;Edition"/>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Genre -->
+
+    <owl:Class rdf:about="&meta-ontology;Genre"/>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Product -->
+
+    <owl:Class rdf:about="&meta-ontology;Product"/>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Publisher -->
+
+    <owl:Class rdf:about="&meta-ontology;Publisher"/>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Review -->
+
+    <owl:Class rdf:about="&meta-ontology;Review"/>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Series -->
+
+    <owl:Class rdf:about="&meta-ontology;Series"/>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Story -->
+
+    <owl:Class rdf:about="&meta-ontology;Story"/>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Team -->
+
+    <owl:Class rdf:about="&meta-ontology;Team"/>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Universe -->
+
+    <owl:Class rdf:about="&meta-ontology;Universe"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Andrew -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Andrew">
+        <rdf:type rdf:resource="&meta-ontology;Character"/>
+        <character_name rdf:datatype="&xsd;string">Andrew Wiggin</character_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Basilisk -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Basilisk">
+        <rdf:type rdf:resource="&meta-ontology;Character"/>
+        <character_name rdf:datatype="&xsd;string">Basilisk the Snake</character_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Dumbledore -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Dumbledore">
+        <rdf:type rdf:resource="&meta-ontology;Character"/>
+        <character_name rdf:datatype="&xsd;string">Albus Dumbledore</character_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Enders_Game_Author -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Enders_Game_Author">
+        <rdf:type rdf:resource="&meta-ontology;Author"/>
+        <author_name rdf:datatype="&xsd;string">Orson Scott Card</author_name>
+        <author_about rdf:datatype="&xsd;string">Orson Scott Card is the author of the novels Ender&apos;s Game, Ender&apos;s Shadow, and Speaker for the Dead, which are widely read by adults and younger readers, and are increasingly used in schools.
+Besides these and other science fiction novels, Card writes contemporary fantasy (Magic Street, Enchantment, Lost Boys), biblical novels (Stone Tables, Rachel and Leah), the American frontier fantasy series The Tales of Alvin Maker (beginning with Seventh Son), poetry (An Open Book), and many plays and scripts.</author_about>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Enders_Game_Book -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Enders_Game_Book">
+        <rdf:type rdf:resource="&meta-ontology;Book"/>
+        <pages rdf:datatype="&xsd;int">324</pages>
+        <reviewCount rdf:datatype="&xsd;int">36545</reviewCount>
+        <rating rdf:datatype="&xsd;float">4.29</rating>
+        <ratingCount rdf:datatype="&xsd;int">808256</ratingCount>
+        <title rdf:datatype="&xsd;string">Ender&apos;s Game</title>
+        <image rdf:datatype="&xsd;string">Ender&apos;s Game Image</image>
+        <awards rdf:datatype="&xsd;string">Hugo Award for Best Novel (1986)</awards>
+        <adaptedTo rdf:resource="&meta-ontology;Enders_Game_Comic"/>
+        <has rdf:resource="&meta-ontology;Enders_Game_Edition"/>
+        <is rdf:resource="&meta-ontology;Enders_Game_Product"/>
+        <given rdf:resource="&meta-ontology;Enders_Game_Review"/>
+        <contains rdf:resource="&meta-ontology;Enders_Game_Story"/>
+        <has rdf:resource="&meta-ontology;Enders_Game_Story"/>
+        <has rdf:resource="&meta-ontology;Science_Fiction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Enders_Game_Comic -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Enders_Game_Comic">
+        <rdf:type rdf:resource="&meta-ontology;Comic"/>
+        <comic_name rdf:datatype="&xsd;string">Ender&apos;s Game, Volume 1: Battle School</comic_name>
+        <hasGenre rdf:datatype="&xsd;string">Science Fiction</hasGenre>
+        <adaptationOf rdf:resource="&meta-ontology;Enders_Game_Book"/>
+        <contains rdf:resource="&meta-ontology;Enders_Game_Comic_Story"/>
+        <belongsTo rdf:resource="&meta-ontology;Enders_Game_Series"/>
+        <createdBy rdf:resource="&meta-ontology;Enders_Game_Team"/>
+        <publishedBy rdf:resource="&meta-ontology;Marvel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Enders_Game_Comic_Story -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Enders_Game_Comic_Story">
+        <rdf:type rdf:resource="&meta-ontology;Story"/>
+        <plot rdf:datatype="&xsd;string">The international military is taking our best and brightest to mold them into the finest military minds ever - and they&apos;re taking them young. 8-year-old Ender Wiggin is the best they&apos;ve ever found. Can he save the Earth? Can he survive Battle School and the game that they will force him to play? The legendary sci-fi epic by New York Times Bestseller Orson Scott Card comes to comics, courtesy of hot writer Christopher Yost (X-Force) and superstar Pasqual Ferry! Collects Ender&apos;s Game: First Series #1-5.</plot>
+        <introduction rdf:datatype="&xsd;string">There&apos;s a war coming. The same aliens who almost destroyed Earth once are coming back to get the whole job done this time. But we aren&apos;t going to just sit and die.</introduction>
+        <contains rdf:resource="&meta-ontology;Andrew"/>
+        <createdBy rdf:resource="&meta-ontology;Enders_Game_Author"/>
+        <contains rdf:resource="&meta-ontology;Mazer"/>
+        <contains rdf:resource="&meta-ontology;Peter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Enders_Game_Edition -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Enders_Game_Edition">
+        <rdf:type rdf:resource="&meta-ontology;Edition"/>
+        <ISBN_number rdf:datatype="&xsd;string">0812550706</ISBN_number>
+        <edition_language rdf:datatype="&xsd;string">English</edition_language>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Enders_Game_Product -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Enders_Game_Product">
+        <rdf:type rdf:resource="&meta-ontology;Product"/>
+        <hardcover rdf:datatype="&xsd;string">352 pages</hardcover>
+        <price rdf:datatype="&xsd;int">5</price>
+        <shipping_weight rdf:datatype="&xsd;float">5.6</shipping_weight>
+        <vendor rdf:datatype="&xsd;string">Barnes and Noble</vendor>
+        <genre rdf:datatype="&xsd;string">science fiction</genre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Enders_Game_Review -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Enders_Game_Review">
+        <rdf:type rdf:resource="&meta-ontology;Review"/>
+        <date rdf:datatype="&xsd;string">2010-05-30T09:00:00</date>
+        <content rdf:datatype="&xsd;string">One of the best sci-fi books I have read so far. This is an amazing story with an awesome twist near the end, and the writing in this book is much better than the writing in other dystopian novels such as The Maze Runner, Divergent, and even The Hunger Games. I feel like Ender&apos;s story really resonates with me, and his experiences in Battle School and during the final showdown are incredibly intense and gripping.</content>
+        <reviewer rdf:datatype="&xsd;string">Sean</reviewer>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Enders_Game_Series -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Enders_Game_Series">
+        <rdf:type rdf:resource="&meta-ontology;Series"/>
+        <series_name rdf:datatype="&xsd;string">Ender&apos;s Quintet</series_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Enders_Game_Story -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Enders_Game_Story">
+        <rdf:type rdf:resource="&meta-ontology;Story"/>
+        <plot rdf:datatype="&xsd;string">Ender&apos;s skills make him a leader in school and respected in the Battle Room, where children play at mock battles in zero gravity. Yet growing up in an artificial community of young soldiers, Ender suffers greatly from isolation, rivalry from his peers, pressure from the adult teachers, and an unsettling fear of the alien invaders. His psychological battles include loneliness, fear that he is becoming like the cruel brother he remembers, and fanning the flames of devotion to his beloved sister. 
+
+Is Ender the general Earth needs? But Ender is not the only result of the genetic experiments. The war with the Buggers has been raging for a hundred years, and the quest for the perfect general has been underway for almost as long. Ender&apos;s two older siblings are every bit as unusual as he is, but in very different ways. Between the three of them lie the abilities to remake a world. If the world survives, that is.</plot>
+        <introduction rdf:datatype="&xsd;string">In order to develop a secure defense against a hostile alien race&apos;s next attack, government agencies breed child geniuses and train them as soldiers. A brilliant young boy, Andrew &quot;Ender&quot; Wiggin lives with his kind but distant parents, his sadistic brother Peter, and the person he loves more than anyone else, his sister Valentine. Peter and Valentine were candidates for the soldier-training program but didn&apos;t make the cut--young Ender is the Wiggin drafted to the orbiting Battle School for rigorous military training.</introduction>
+        <contains rdf:resource="&meta-ontology;Andrew"/>
+        <createdBy rdf:resource="&meta-ontology;Enders_Game_Author"/>
+        <contains rdf:resource="&meta-ontology;Mazer"/>
+        <contains rdf:resource="&meta-ontology;Peter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Enders_Game_Team -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Enders_Game_Team">
+        <rdf:type rdf:resource="&meta-ontology;Team"/>
+        <illustrator_name rdf:datatype="&xsd;string">Christopher Yost</illustrator_name>
+        <contains rdf:resource="&meta-ontology;Enders_Game_Author"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Fantasy -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Fantasy">
+        <rdf:type rdf:resource="&meta-ontology;Genre"/>
+        <topgenre rdf:datatype="&xsd;string">Fantasy</topgenre>
+        <url rdf:datatype="&xsd;string">https://www.goodreads.com/work/shelves/40330</url>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Ginny -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Ginny">
+        <rdf:type rdf:resource="&meta-ontology;Character"/>
+        <character_name rdf:datatype="&xsd;string">Ginny Weasley</character_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Harry_Potter -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Harry_Potter">
+        <rdf:type rdf:resource="&meta-ontology;Book"/>
+        <ratingCount rdf:datatype="&xsd;int">1,735,031</ratingCount>
+        <pages rdf:datatype="&xsd;string">320</pages>
+        <rating rdf:datatype="&xsd;float">4.23</rating>
+        <reviewCount rdf:datatype="&xsd;int">46</reviewCount>
+        <awards rdf:datatype="&xsd;string">British Book Award (1999), Smarties Prize (1999)</awards>
+        <book_name rdf:datatype="&xsd;string">Harry Potter and the Sorceror&apos;s Stone</book_name>
+        <title rdf:datatype="&xsd;string">Harry Potter and the Sorceror&apos;s Stone</title>
+        <image rdf:datatype="&xsd;string">harry potter image</image>
+        <has rdf:resource="&meta-ontology;Fantasy"/>
+        <writtenBy rdf:resource="&meta-ontology;Harry_Potter_Author"/>
+        <adaptedTo rdf:resource="&meta-ontology;Harry_Potter_Comic"/>
+        <has rdf:resource="&meta-ontology;Harry_Potter_Edition"/>
+        <is rdf:resource="&meta-ontology;Harry_Potter_Product"/>
+        <given rdf:resource="&meta-ontology;Harry_Potter_Review"/>
+        <has rdf:resource="&meta-ontology;Harry_Potter_Story"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Harry_Potter_Author -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Harry_Potter_Author">
+        <rdf:type rdf:resource="&meta-ontology;Author"/>
+        <author_about rdf:datatype="&xsd;string">J K (Joanne Kathleen) Rowling was born in the summer of 1965 at Yate General Hospital in England and grew up in Chepstow, Gwent where she went to Wyedean Comprehensive. Jo left Chepstow for Exeter University, where she earned a French and Classics degree, and where her course included one year in Paris. As a postgraduate she moved to London to work at Amnesty International, doing research into human rights abuses in Francophone Africa.</author_about>
+        <author_name rdf:datatype="&xsd;string">J.K.Rowling</author_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Harry_Potter_Book_2 -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Harry_Potter_Book_2">
+        <rdf:type rdf:resource="&meta-ontology;Book"/>
+        <ratingCount rdf:datatype="&xsd;int">1735031</ratingCount>
+        <reviewCount rdf:datatype="&xsd;int">29690</reviewCount>
+        <pages rdf:datatype="&xsd;int">341</pages>
+        <rating rdf:datatype="&xsd;float">4.36</rating>
+        <title rdf:datatype="&xsd;string">Harry Potter and the Chamber of Secrets</title>
+        <awards rdf:datatype="&xsd;string">Mythopoeic Fantasy Award for Children&apos;s Literature (2008)</awards>
+        <image rdf:datatype="&xsd;string">harry_potter_book_2_image</image>
+        <has rdf:resource="&meta-ontology;Fantasy"/>
+        <writtenBy rdf:resource="&meta-ontology;Harry_Potter_Author"/>
+        <adaptedTo rdf:resource="&meta-ontology;Harry_Potter_Book_2_Comic"/>
+        <has rdf:resource="&meta-ontology;Harry_Potter_Book_2_Edition"/>
+        <is rdf:resource="&meta-ontology;Harry_Potter_Book_2_Product"/>
+        <given rdf:resource="&meta-ontology;Harry_Potter_Book_2_Review"/>
+        <has rdf:resource="&meta-ontology;Harry_Potter_Book_2_Story"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Harry_Potter_Book_2_Author -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Harry_Potter_Book_2_Author">
+        <rdf:type rdf:resource="&meta-ontology;Author"/>
+        <author_about rdf:datatype="&xsd;string">J K (Joanne Kathleen) Rowling was born in the summer of 1965 at Yate General Hospital in England and grew up in Chepstow, Gwent where she went to Wyedean Comprehensive. Jo left Chepstow for Exeter University, where she earned a French and Classics degree, and where her course included one year in Paris. As a postgraduate she moved to London to work at Amnesty International, doing research into human rights abuses in Francophone Africa.</author_about>
+        <author_name rdf:datatype="&xsd;string">J.K.Rowling</author_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Harry_Potter_Book_2_Comic -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Harry_Potter_Book_2_Comic">
+        <rdf:type rdf:resource="&meta-ontology;Comic"/>
+        <hasGenre rdf:datatype="&xsd;string">Fantasy</hasGenre>
+        <comic_name rdf:datatype="&xsd;string">Harry Potter and the Chamber of Secrets Illustrated Edition</comic_name>
+        <adaptationOf rdf:resource="&meta-ontology;Harry_Potter_Book_2"/>
+        <contains rdf:resource="&meta-ontology;Harry_Potter_Book_2_Comic_Story"/>
+        <belongsTo rdf:resource="&meta-ontology;Harry_Potter_Series"/>
+        <createdBy rdf:resource="&meta-ontology;Harry_Potter_Team"/>
+        <publishedBy rdf:resource="&meta-ontology;Scholastic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Harry_Potter_Book_2_Comic_Story -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Harry_Potter_Book_2_Comic_Story">
+        <rdf:type rdf:resource="&meta-ontology;Story"/>
+        <introduction rdf:datatype="&xsd;string">Harry Potter Book 2 illustrated edition of Chamber of Secrets</introduction>
+        <plot rdf:datatype="&xsd;string">The Dursleys were so mean and hideous that summer that all Harry Potter wanted was to get back to the Hogwarts School for Witchcraft and Wizardry. But just as he&apos;s packing his bags, Harry receives a warning from a strange, impish creature named Dobby who says that if Harry Potter returns to Hogwarts, disaster will strike.
+
+And strike it does. For in Harry&apos;s second year at Hogwarts, fresh torments and horrors arise, including an outrageously stuck-up new professor, Gilderoy Lockhart, a spirit named Moaning Myrtle who haunts the girls&apos; bathroom, and the unwanted attentions of Ron Weasley&apos;s younger sister, Ginny.</plot>
+        <contains rdf:resource="&meta-ontology;Basilisk"/>
+        <contains rdf:resource="&meta-ontology;Dumbledore"/>
+        <contains rdf:resource="&meta-ontology;Ginny"/>
+        <createdBy rdf:resource="&meta-ontology;Harry_Potter_Team"/>
+        <contains rdf:resource="&meta-ontology;Hermione"/>
+        <contains rdf:resource="&meta-ontology;Ron"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Harry_Potter_Book_2_Edition -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Harry_Potter_Book_2_Edition">
+        <rdf:type rdf:resource="&meta-ontology;Edition"/>
+        <ISBN_number rdf:datatype="&xsd;string">0439064864</ISBN_number>
+        <edition_language rdf:datatype="&xsd;string">English</edition_language>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Harry_Potter_Book_2_Product -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Harry_Potter_Book_2_Product">
+        <rdf:type rdf:resource="&meta-ontology;Product"/>
+        <price rdf:datatype="&xsd;int">23</price>
+        <hardcover rdf:datatype="&xsd;string">272 pages</hardcover>
+        <shipping_weight rdf:datatype="&xsd;float">3.6</shipping_weight>
+        <vendor rdf:datatype="&xsd;string">Amazon</vendor>
+        <genre rdf:datatype="&xsd;string">Fantasy</genre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Harry_Potter_Book_2_Review -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Harry_Potter_Book_2_Review">
+        <rdf:type rdf:resource="&meta-ontology;Review"/>
+        <date rdf:datatype="&xsd;dateTime">2002-05-30T09:00:00</date>
+        <reviewer rdf:datatype="&xsd;string">Jessica</reviewer>
+        <content rdf:datatype="&xsd;string">it&apos;s important you know that I LOVE HARRY POTTER. In my fingers and my toes. LOVE.
+
+That being said, this is my least favorite of the early books (I&apos;ll let you know whether it&apos;s my least favorite overall after I reread HARRY POTTER AND THE ORDER OF THE PHOENIX).
+
+The reasons are LEGION:
+
+1. Gilderoy Lockhart is a prat, and I hate him.
+2. Deathday party. It&apos;s creepy and gross.
+3. Poor Ginny.
+4. The trouble Harry and Ron get Mr. Weasley into stresses me out.</content>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Harry_Potter_Book_2_Story -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Harry_Potter_Book_2_Story">
+        <rdf:type rdf:resource="&meta-ontology;Story"/>
+        <introduction rdf:datatype="&xsd;string">And strike it does. For in Harry&apos;s second year at Hogwarts, fresh torments and horrors arise, including an outrageously stuck-up new professor, Gilderoy Lockhart, a spirit named Moaning Myrtle who haunts the girls&apos; bathroom, and the unwanted attentions of Ron Weasley&apos;s younger sister, Ginny. But each of these seem minor annoyances when the real trouble begins, and someone, or something, starts turning Hogwarts students to stone. Could it be Draco Malfoy, a more poisonous rival than ever? Could it possibly be Hagrid, whose mysterious past is finally told? Or could it be the one everyone at Hogwarts most suspects: Harry Potter himself?</introduction>
+        <plot rdf:datatype="&xsd;string">The Dursleys were so mean and hideous that summer that all Harry Potter wanted was to get back to the Hogwarts School for Witchcraft and Wizardry. But just as he&apos;s packing his bags, Harry receives a warning from a strange, impish creature named Dobby who says that if Harry Potter returns to Hogwarts, disaster will strike.</plot>
+        <contains rdf:resource="&meta-ontology;Basilisk"/>
+        <contains rdf:resource="&meta-ontology;Dumbledore"/>
+        <contains rdf:resource="&meta-ontology;Ginny"/>
+        <createdBy rdf:resource="&meta-ontology;Harry_Potter_Author"/>
+        <contains rdf:resource="&meta-ontology;Hermione"/>
+        <contains rdf:resource="&meta-ontology;Ron"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Harry_Potter_Comic -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Harry_Potter_Comic">
+        <rdf:type rdf:resource="&meta-ontology;Comic"/>
+        <hasGenre rdf:datatype="&xsd;string">Fantasy</hasGenre>
+        <comic_name rdf:datatype="&xsd;string">Harry Potter and the Sorceror&apos;s Stone Illustrated Edition</comic_name>
+        <adaptationOf rdf:resource="&meta-ontology;Harry_Potter"/>
+        <contains rdf:resource="&meta-ontology;Harry_Potter_Comics_Story"/>
+        <belongsTo rdf:resource="&meta-ontology;Harry_Potter_Series"/>
+        <createdBy rdf:resource="&meta-ontology;Harry_Potter_Team"/>
+        <publishedBy rdf:resource="&meta-ontology;Scholastic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Harry_Potter_Comics_Story -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Harry_Potter_Comics_Story">
+        <rdf:type rdf:resource="&meta-ontology;Story"/>
+        <plot rdf:datatype="&xsd;string">For the first time, J.K. Rowling&apos;s beloved Harry Potter books will be presented in lavishly illustrated full-color editions. Kate Greenaway-award-winning artist Jim Kay has created over 100 stunning illustrations, making this deluxe format a perfect gift as much for a child being introduced to the series, as for the dedicated fan.</plot>
+        <introduction rdf:datatype="&xsd;string">Harry Potter has never been the star of a Quidditch team, scoring points while riding a broom far above the ground. He knows no spells, has never helped to hatch a dragon, and has never worn a cloak of invisibility.
+ 
+All he knows is a miserable life with the Dursleys, his horrible aunt and uncle, and their abominable son, Dudley -- a great big swollen spoiled bully. Harry&apos;s room is a tiny closet at the foot of the stairs, and he hasn&apos;t had a birthday party in eleven years.
+ 
+But all that is about to change when a mysterious letter arrives by owl messenger: a letter with an invitation to an incredible place that Harry -- and anyone who reads about him -- will find unforgettable.</introduction>
+        <contains rdf:resource="&meta-ontology;Dumbledore"/>
+        <createdBy rdf:resource="&meta-ontology;Harry_Potter_Team"/>
+        <contains rdf:resource="&meta-ontology;Hermione"/>
+        <contains rdf:resource="&meta-ontology;Ron"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Harry_Potter_Edition -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Harry_Potter_Edition">
+        <rdf:type rdf:resource="&meta-ontology;Edition"/>
+        <ISBN_number rdf:datatype="&xsd;string">0590353403</ISBN_number>
+        <edition_language rdf:datatype="&xsd;string">English</edition_language>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Harry_Potter_Product -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Harry_Potter_Product">
+        <rdf:type rdf:resource="&meta-ontology;Product"/>
+        <shipping_weight rdf:datatype="&xsd;float">1.6</shipping_weight>
+        <price rdf:datatype="&xsd;int">20</price>
+        <hardcover rdf:datatype="&xsd;string">320 pages</hardcover>
+        <vendor rdf:datatype="&xsd;string">Amazon</vendor>
+        <genre rdf:datatype="&xsd;string">Fantasy</genre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Harry_Potter_Review -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Harry_Potter_Review">
+        <rdf:type rdf:resource="&meta-ontology;Review"/>
+        <date rdf:datatype="&xsd;dateTime">2001-10-26T21:32:52</date>
+        <reviewer rdf:datatype="&xsd;string">Maggie</reviewer>
+        <content rdf:datatype="&xsd;string">One of the main reasons Harry Potter is so wonderful is because Rowling shows you a boring world; it is the world of reality, dry, boring and ordinary. Then under it she reveals fantasy; she reveals everything a reader longs for: she reveals pure escapism. I still want to go to Hogwarts. I always will.</content>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Harry_Potter_Series -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Harry_Potter_Series">
+        <rdf:type rdf:resource="&meta-ontology;Series"/>
+        <series_name rdf:datatype="&xsd;string">Harry Potter and The Sorcerer&apos;s Stone (Book 1)</series_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Harry_Potter_Story -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Harry_Potter_Story">
+        <rdf:type rdf:resource="&meta-ontology;Story"/>
+        <plot rdf:datatype="&xsd;string">Harry Potter&apos;s life is miserable. His parents are dead and he&apos;s stuck with his heartless relatives, who force him to live in a tiny closet under the stairs. But his fortune changes when he receives a letter that tells him the truth about himself: he&apos;s a wizard. A mysterious visitor rescues him from his relatives and takes him to his new home, Hogwarts School of Witchcraft and Wizardry.
+
+After a lifetime of bottling up his magical powers, Harry finally feels like a normal kid. But even within the Wizarding community, he is special. He is the boy who lived: the only person to have ever survived a killing curse inflicted by the evil Lord Voldemort, who launched a brutal takeover of the Wizarding world, only to vanish after failing to kill Harry.</plot>
+        <introduction rdf:datatype="&xsd;string">What did Harry Potter know about magic? He was stuck living with the decidedly un-magical Dursleys, who hated him. He slept in a closet and ate their leftovers. But an owl messenger changes all that, with an invitation to attend the Hogwarts School for Wizards and Witches, where it turns out Harry is already famous</introduction>
+        <contains rdf:resource="&meta-ontology;Dumbledore"/>
+        <createdBy rdf:resource="&meta-ontology;Harry_Potter_Author"/>
+        <contains rdf:resource="&meta-ontology;Hermione"/>
+        <contains rdf:resource="&meta-ontology;Ron"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Harry_Potter_Team -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Harry_Potter_Team">
+        <rdf:type rdf:resource="&meta-ontology;Team"/>
+        <illustrator_name rdf:datatype="&xsd;string">Jim Kay</illustrator_name>
+        <contains rdf:resource="&meta-ontology;Harry_Potter_Author"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Hermione -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Hermione">
+        <rdf:type rdf:resource="&meta-ontology;Character"/>
+        <character_name rdf:datatype="&xsd;string">Hermione Granger</character_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Marvel -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Marvel">
+        <rdf:type rdf:resource="&meta-ontology;Publisher"/>
+        <comics_publisher_name rdf:datatype="&xsd;string">Marvel</comics_publisher_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Mazer -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Mazer">
+        <rdf:type rdf:resource="&meta-ontology;Character"/>
+        <character_name rdf:datatype="&xsd;string">Mazer Rackham</character_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Peter -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Peter">
+        <rdf:type rdf:resource="&meta-ontology;Character"/>
+        <character_name rdf:datatype="&xsd;string">Peter Wiggin</character_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Ron -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Ron">
+        <rdf:type rdf:resource="&meta-ontology;Character"/>
+        <character_name rdf:datatype="&xsd;string">Ronald Weasley</character_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Scholastic -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Scholastic">
+        <rdf:type rdf:resource="&meta-ontology;Publisher"/>
+        <comics_publisher_name rdf:datatype="&xsd;string">Scholastic</comics_publisher_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/panantha/ontologies/2016/10/meta-ontology#Science_Fiction -->
+
+    <owl:NamedIndividual rdf:about="&meta-ontology;Science_Fiction">
+        <rdf:type rdf:resource="&meta-ontology;Genre"/>
+        <topgenre rdf:datatype="&xsd;string">Science Fiction</topgenre>
+        <url rdf:datatype="&xsd;string">https://www.goodreads.com/genres/science-fiction</url>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
