@@ -1,0 +1,4 @@
+Participating teams will use data provided by Toutiao Q&A to conduct analysis on specific questions. Each data record includes expert tags, question data and question distribution data. Given certain questions, participants need to forecast which experts are more likely to answer which questions. Specifically, given each question and each expert, participants need to calculate the probability of that expert answering the question.
+       In the operation, the management system will invite experts to answer the question in the sequence of the probability, until a certain number of answers are obtained. In terms of evaluation, given a certain question, we will rank the experts based on the forecasted probability, and evaluate the NDCG@5 and NDCG@10 of ranking results. The final evaluation formula is:
+
+       NDCG@5 * 0.5 + NDCG@10 * 0.5.
