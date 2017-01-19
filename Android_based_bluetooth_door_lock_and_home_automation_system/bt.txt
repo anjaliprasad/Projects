@@ -1,0 +1,186 @@
+#include<reg51.h> 
+ static int K;
+unsigned char ser_recieve;	
+void delay_ms(unsigned char );
+sbit device1 = P1^7; 
+sbit device2 = P1^6; 
+sbit device3 = P1^5; 
+sbit device4 = P1^4; 
+void motor_open();
+void motor_close();
+void serial_init();
+ void delay_50ms (void); // Delay function using Timer 0 for 50ms.
+void delay_nsec(char n);
+unsigned char get_serial();
+
+void main()
+{ 
+serial_init();
+delay_ms(10);
+//send_str(welcome);
+P2=0x00;
+P1=0x00;
+//P2=0x00;	 
+
+
+SBUF='k';
+while(TI==0);
+TI=0;
+
+				motor_open();delay_50ms();delay_50ms();delay_50ms();delay_50ms();;}	 
+   delay_nsec(2);
+
+while(1)
+  {
+while(RI==0);
+ser_recieve=SBUF;
+RI=0;
+
+
+switch(ser_recieve)
+    {   
+    case '5': device1 = 0;
+			 break;
+
+    case '6': device2 = 0; 
+             break;
+
+    case '7':device3=0;
+	         
+              break;
+    case '8': device4=0;
+	         
+              break;
+    case '1': device1=1;
+              break;
+
+    case '2': device2=1;
+	          break;
+
+    case '3': device3 = 1;
+	          break;
+    case '4': device4=1;  
+	          break;
+			    
+    case '0': P1=0x00;
+              break;
+	case '9': P1=0xff;  
+	          break;
+
+	 ///////////////////////////////
+    case 'c': {
+				for(K=0;K<25;K++){
+				motor_close();}
+			}	
+              break;
+
+    case 'o':{  
+	for(K=0;K<25;K++){motor_open();}  }
+              break;
+	 ///////////////////////////////
+	default :P2=0x00;
+				P1=0x00;
+				break;
+
+	
+    }
+}
+}
+
+
+void delay_ms(unsigned char del)
+
+{ 
+int i;
+int j;
+  for(i=0; i<=del;i++)
+  for (j=0;j<=1275;j++);
+}
+
+void serial_init()
+{  
+SCON=0x50;   
+TMOD=0x20;
+TH1=0xfd;
+TL1=0xfd;
+TR1=1;
+}
+ void motor_open()
+  {	   int i,j;
+   			P2=0x0e;
+			for(i=0;i<10;i++)
+ 			 {
+ 			   for(j=0;j<500;j++);
+			 }
+			P2=0x0d;
+			for(i=0;i<10;i++)
+ 			 {
+  			  for(j=0;j<500;j++);
+			 }
+			P2=0x0b;
+			for(i=0;i<10;i++)
+ 			 {
+  			  for(j=0;j<500;j++);
+	 		 }
+			P2=0x07;
+			for(i=0;i<10;i++)
+			  {
+  			  for(j=0;j<500;j++);
+			 }
+			P2=0x00;
+  }
+
+
+ void motor_close()
+  {	
+  int i,j;			
+  P2=0x07;
+			for(i=0;i<10;i++)
+			  {
+  			  for(j=0;j<500;j++);
+			 }
+		  			P2=0x0b;
+			for(i=0;i<10;i++)
+ 			 {
+  			  for(j=0;j<500;j++);
+	 		 }
+	  			P2=0x0d;
+			for(i=0;i<10;i++)
+ 			 {
+  			  for(j=0;j<500;j++);
+			 }
+
+   			P2=0x0e;
+			for(i=0;i<10;i++)
+ 			 {
+ 			   for(j=0;j<500;j++);
+			 }
+			  P2=0x00;
+
+  }
+  
+void delay_nsec(char n)
+{
+char i,j; 
+for(j=0;j<n;j++)
+  {
+      for(i=0;i<20;i++)
+      delay_50ms ();
+  }
+}
+
+ void delay_50ms (void) // Delay function using Timer 0 for 50ms.
+{
+    TMOD &=0xF0;
+    TMOD |=0x01;
+    ET0 =0;
+	TH0=0x4b;
+	TL0=0xfc;
+    //TH0 =0x3C; 
+    //TL0 =0xB0;
+    TF0 =0;
+    TR0 =1;
+    while(TF0==0);
+    TR0=0;
+
+}
