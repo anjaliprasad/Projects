@@ -66,6 +66,18 @@ def column_extract(training,column_to_extract):
         column.append(training[i][column_to_extract])
     return column
 
+def get_Vocab(training_labels1):
+    vocabulary1 =[]
+    for i in range(0, len(training_labels1)):
+        Tokens1 = getVocabulary1(training_labels1[i][2])
+        for tok in Tokens1:
+            vocabulary1.append(tok)
+    # print "vocabus",len(vocabulary1)
+    vocabulary2 = set(vocabulary1)
+    vocabulary1 = list(vocabulary2)
+    return vocabulary1
+
+
 def NB():
     trainingSet = loadData(filename1)
 #-----new
@@ -91,14 +103,8 @@ def NB():
     #Create dictionary of words with key as word and value as index of the array
 
     #----new
-    vocabulary1=[]
-    for i in range(0, len(training_labels1)):
-        Tokens1 = getVocabulary1(training_labels1[i][2])
-        for tok in Tokens1:
-            vocabulary1.append(tok)
-    #print "vocabus",len(vocabulary1)
-    vocabulary2 = set(vocabulary1)
-    vocabulary1 = list(vocabulary2)
+    vocabulary1=get_Vocab(training_labels1)
+
     #print "vocabulary1",len(vocabulary1),vocabulary1[0],vocabulary1[2],vocabulary1[3]
     #-----
 
@@ -143,16 +149,6 @@ def NB():
         for j in range(0,len(unique_words)):
             prior_prob[codes[unique_words[j]]]=unique_count[unique_words[j]]/float(len(training_labels1))
     #----------------------------------------------------------------------------------------------------
-    #with open("model.txt", "w") as text_file:
-    #    text_file.write("Prior Probabilities \n")
-    #    for i in codes:
-    #        text_file.write(i + "\t\t")
-    #    text_file.write("\n")
-    #    for i in range(0,len(codes)):
-    #        text_file.write(str(prior_prob[i]) + "\t")
-    #    text_file.write("\n\n\t")
-    #    for i in index_dict:
-    #        text_file.write(i + "\t\t=" + str(word_prob_array1[0][index_dict[i]] ))
     print_data = dict();
     print_data["prior_prob"] = prior_prob
     print_data["word_prob_array1"] = word_prob_array1
@@ -161,12 +157,8 @@ def NB():
     print_data["vocabulary1"]=vocabulary1
 
     with open('nbmodel.txt', 'w') as outfile:
-        #json.dump(prior_prob, outfile)
         json.dump(print_data, outfile)
-        #outfile.write("\n\n")
-        #json.dump(print_data["word_prob_array1"], outfile)
-    #-------------------------------------------------------------------------------------------------------
-    #nbclassify.classify()
+
 
 
 NB()

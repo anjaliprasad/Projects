@@ -41,6 +41,15 @@ def tokenize(set):
     list_of_tokens.append(tok)
     return list_of_tokens
 
+def printToFile(testing_labels_final):
+    with open('nboutput.txt', 'w') as outfile:
+        #json.dump(prior_prob, outfile)
+        for i in range (0,len(testing_labels_final)):
+            if i==(len(testing_labels_final) - 1):
+                outfile.write(testing_labels_final[i][0] + " " + testing_labels_final[i][1] + " " + testing_labels_final[i][2])
+            else:
+                outfile.write(testing_labels_final[i][0] + " " + testing_labels_final[i][1] + " " + testing_labels_final[i][2] + "\n")
+
 def classify():
     data_dictionary = []
     with open("nbmodel.txt") as outputfile:
@@ -92,13 +101,7 @@ def classify():
             instance_label_c1.append("negative")
         testing_labels_final.append(instance_label_c1)
 
-    with open('nboutput.txt', 'w') as outfile:
-        #json.dump(prior_prob, outfile)
-        for i in range (0,len(testing_labels_final)):
-            if i==(len(testing_labels_final) - 1):
-                outfile.write(testing_labels_final[i][0] + " " + testing_labels_final[i][1] + " " + testing_labels_final[i][2])
-            else:
-                outfile.write(testing_labels_final[i][0] + " " + testing_labels_final[i][1] + " " + testing_labels_final[i][2] + "\n")
+    printToFile(testing_labels_final)
 
 
 classify()
