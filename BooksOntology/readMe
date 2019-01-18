@@ -2,4 +2,3 @@
 Our project aims at providing unified information about books. 
 We have created a federated ontology that includes data from Goodreads Ontology, Amazon Ontology and Comics Ontology.
 We then query the federated ontology using SPARQL and show that federated ontology is more efficient than collection of individual ontologies.
-Please read DBI_Research_Paper_final.pdf for all the details.
