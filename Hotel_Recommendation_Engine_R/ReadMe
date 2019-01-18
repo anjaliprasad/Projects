@@ -1,4 +1,3 @@
 ReadMe
-under Professor Sathyanaraya Raghavachary
 • Trained the logistic regression algorithm with data to recommend hotel for a new user based on a set of features like location, continent, etc.
 • Implemented the algorithm in Octave, R and C++
